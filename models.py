@@ -8,19 +8,20 @@ engine = create_engine("sqlite:///escola.db")
 Session = sessionmaker(bind=engine)
 
 #Criando as tabelas do banco
-class Cursos(Base):
+class Curso(Base):
     __tablename__ = "cursos"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome = Column(String(100), nullable=False)
     carga_horaria = Column(Integer, nullable=False)
+    descriacao = Column(String(150))
 
     alunos = relationship("Aluno", back_populates="curso")
 
     def __repr__(self):
         return f"Curso = id: {self.id} - Nome: {self.nome} - Carga Hóraria: {self.carga_horaria}"
     
-class Alunos(Base):
+class Aluno(Base):
     __tablename__ = "alunos"
 
     id = Column(Integer, primary_key=True, autoincrement=True)

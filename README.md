@@ -7,7 +7,7 @@
 # pyton -m alembic init alembic (migration)
 
 # Configurando a conexão com db
-# ---------------------------------
+# -------------------------------------
 
 # abra o arquivo alembic.ini
 # e pocure a linha com essa informação:
@@ -25,3 +25,12 @@
 # target_metadata = None
 # e altere para:
 # target_metadata = Base.metadata
+
+# Criando as migrações - Qualquer alteração no banco
+# -------------------------------------
+
+# No terminal rodar o comando:
+# python -m alembic revision --autogenerate -m "comentario"
+
+# Para executar as alterações no banco rode o comando:
+# python -m alembic upgrade head
