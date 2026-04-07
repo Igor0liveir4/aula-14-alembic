@@ -15,5 +15,10 @@ def cadastrar_curso():
             session.rollback()
             print(f"ocorreu um erro {erro}")
         
-
-cadastrar_curso()
+def cadastrar_aluno():
+    with Session() as session:
+        try:
+            pass
+        except Exception as erro:
+            session.rollback()
+            print(f"ocorreu um erro {erro}")
